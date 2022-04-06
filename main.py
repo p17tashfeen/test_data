@@ -64,8 +64,6 @@ if __name__ == '__main__':
     config = ConfigParser()
     config.read(file)
 
-    print(config["es"]["hosts"])
-
     es = Elasticsearch(hosts=config['es']['hosts'], verify_certs=False,
                        timeout=int(config['es']['timeout']),
                        max_retries=int(config['es']['max_retries']),
